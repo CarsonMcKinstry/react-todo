@@ -2,8 +2,6 @@ const React = require('react');
 const {connect} = require('react-redux');
 const actions = require('actions');
 
-console.log(actions);
-
 export const AddTodo = React.createClass({
   handleSubmit: function (e) {
     e.preventDefault();
