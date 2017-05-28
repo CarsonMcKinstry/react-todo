@@ -5,7 +5,6 @@ import * as actions from 'actions';
 
 export const Login = React.createClass({
   onLogin() {
-    console.log(`I'm working!`);
     let {dispatch} = this.props;
 
     dispatch(actions.startLogin());
