@@ -87,4 +87,28 @@ describe('Reducers', () => {
       expect(res[0]).toEqual(todos[0]);
     });
   });
+
+  describe('authReducer', () => {
+    it('should add uid to store on LOGIN', () => {
+      let action = {
+        type: 'LOGIN',
+        uid: 12345
+      };
+      let res = reducers.authReducer(undefined, df(action));
+      expect(res).toEqual({
+        uid: action.uid
+      });
+    });
+
+    it('should wipe auth on LOGOUT', () => {
+      let authData = {
+        uid: 12345
+      };
+      let action = {
+        type: 'LOGOUT'
+      }
+      let res = reducers.authReducer(df(authData), df(action));
+      expect(res).toEqual({});
+    })
+  })
 });
