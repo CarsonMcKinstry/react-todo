@@ -11,7 +11,7 @@ module.exports = {
     // filter by searchText
     filteredTodos = filteredTodos.filter((item) => {
       let text = item.text.toLowerCase();
-      return searchText.length === 0 || text.indexOf(searchText) > -1;
+      return searchText.length === 0 || text.indexOf(searchText.toLowerCase()) > -1;
     });
     // sort by non-completed first
     filteredTodos.sort((a,b) =>{
